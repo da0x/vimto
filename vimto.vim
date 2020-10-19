@@ -1,3 +1,14 @@
+"set runtimepath+=~/.vimto
+
+call plug#begin()
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
+  Plug 'NLKNguyen/papercolor-theme'
+  Plug 'ayu-theme/ayu-vim'
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'itchyny/lightline.vim'
+call plug#end()
+
+
 " Loading color schemes.
 syntax on
 set t_Co=256
