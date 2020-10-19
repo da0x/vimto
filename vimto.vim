@@ -6,6 +6,7 @@ call plug#begin()
   Plug 'ayu-theme/ayu-vim'
   Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 
@@ -13,7 +14,7 @@ call plug#end()
 syntax on
 set t_Co=256
 set cursorline
-"set background=dark
+set background=dark
 colorscheme nord
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
