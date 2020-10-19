@@ -1,0 +1,1 @@
+source ~/.vimto/vimto.vim
