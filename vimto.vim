@@ -66,10 +66,6 @@ noremap <Up>      <C-W>k
 noremap <Down>    <C-W>j
 noremap <Left>    <C-W>h
 noremap <Right>   <C-W>l
-"inoremap <Up>      <Nop>
-"inoremap <Down>    <Nop>
-"inoremap <Left>    <Nop>
-"inoremap <Right>   <Nop>
 
 noremap <Home>       <C-W>=
 noremap <C-Left>     <C-W>R
