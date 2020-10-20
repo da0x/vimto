@@ -1,4 +1,4 @@
-"set runtimepath+=~/.vimto
+set runtimepath+=~/.vimto
 
 call plug#begin()
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -26,12 +26,13 @@ endif
 set number
 
 " sane text files
-" set fileformat=unix
+"set fileformat=unix
 set encoding=utf-8
-"sane editing (tabs)
-" set tabstop=4
-" set shiftwidth=4
-" set softtabstop=4
+
+" sane editing (tabs)
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " convert all typed tabs to spaces
 set expandtab
@@ -39,12 +40,6 @@ set expandtab
 "autocompletion with ctrl+space
 inoremap <c-space> <c-n>
 inoremap <Nul> <c-n>
-
-" Color Scheme
-" syntax enable
-
-" Netrw
-" let g:netrw_winsize = 80
 
 " Tab operations
 nnoremap <Tab> gt
@@ -59,3 +54,33 @@ noremap <C-k> <C-W>k
 noremap <C-j> <C-W>j
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
+
+" F1 F2 F3 F4
+nmap <F3> :set nu! <CR>
+imap <F3> <ESC> :set nu! <CR>i
+nmap <leader><F3> :set rnu! <CR>
+nmap <F9> :bo term <CR>
+
+" Arrwos
+noremap <Up>      <C-W>k
+noremap <Down>    <C-W>j
+noremap <Left>    <C-W>h
+noremap <Right>   <C-W>l
+"inoremap <Up>      <Nop>
+"inoremap <Down>    <Nop>
+"inoremap <Left>    <Nop>
+"inoremap <Right>   <Nop>
+
+noremap <Home>       <C-W>=
+noremap <C-Left>     <C-W>R
+noremap <C-Right>    <C-W>r
+
+noremap <C-S-Up>        <C-W>K
+noremap <C-S-Down>      <C-W>J
+noremap <C-S-Left>      <C-W>H
+noremap <C-S-Right>     <C-W>L
+
+noremap <A-Up>          <C-W>+
+noremap <A-Down>        <C-W>-
+noremap <A-Left>        <C-W><
+noremap <A-Right>       <C-W>>
