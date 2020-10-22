@@ -83,6 +83,8 @@ noremap <A-Right>       <C-W>>
 
 
 " Vim Go shortcuts
-autocmd FileType go noremap <F5> :w<CR>:GoBuild<CR>:botright cwindow<CR>
+autocmd FileType go noremap <F5> :wa<CR>:GoBuild<CR>:botright cwindow<CR>
+autocmd FileType go noremap <F7> :wa<CR>:GoTest<CR>:botright cwindow<CR>
+autocmd FileType go noremap <F8> :wa<CR>:GoRun<CR>
 autocmd FileType go noremap <F1> :GoDef<CR>
 autocmd FileType go noremap <F12> :GoDefPop<CR>
