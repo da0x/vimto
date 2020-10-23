@@ -2,6 +2,9 @@
 
 This is the personal vimrc for Daher Alfawares.
 
-Here are some words of wisdom. Pick and choose what you like and keep your vim simple. Most plugins are not necessary.
+My approach is minimalist behavior and full visual beauty. Give it a shot.
 
-Daher
+To install add the following to your `.vimrc`
+```
+source /path/to/vimto.vim
+```
