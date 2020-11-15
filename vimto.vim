@@ -37,6 +37,9 @@ set softtabstop=4
 " convert all typed tabs to spaces
 set expandtab
 
+" scroll offset
+set scrolloff=10
+
 "autocompletion with ctrl+space
 inoremap <c-space> <c-n>
 inoremap <Nul> <c-n>
@@ -55,27 +58,19 @@ noremap <C-j> <C-W>j
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
-" F1 F2 F3 F4
-nmap <F3> :set nu! <CR>
-imap <F3> <ESC> :set nu! <CR>i
-nmap <leader><F3> :set rnu! <CR>
-nmap <F9> :bo term <CR>
 
 " Arrwos
-noremap <Up>      <C-W>k
-noremap <Down>    <C-W>j
-noremap <Left>    <C-W>h
-noremap <Right>   <C-W>l
-
-noremap <Home>       <C-W>=
-noremap <C-Left>     <C-W>R
-noremap <C-Right>    <C-W>r
-
+noremap <Up>            <C-W>k
+noremap <Down>          <C-W>j
+noremap <Left>          <C-W>h
+noremap <Right>         <C-W>l
+noremap <Home>          <C-W>=
+noremap <C-Left>        <C-W>R
+noremap <C-Right>       <C-W>r
 noremap <C-S-Up>        <C-W>K
 noremap <C-S-Down>      <C-W>J
 noremap <C-S-Left>      <C-W>H
 noremap <C-S-Right>     <C-W>L
-
 noremap <A-Up>          <C-W>+
 noremap <A-Down>        <C-W>-
 noremap <A-Left>        <C-W><
@@ -83,8 +78,31 @@ noremap <A-Right>       <C-W>>
 
 
 " Vim Go shortcuts
-autocmd FileType go noremap <F5> :wa<CR>:GoBuild<CR>:botright cwindow<CR>
-autocmd FileType go noremap <F7> :wa<CR>:GoTest<CR>:botright cwindow<CR>
-autocmd FileType go noremap <F8> :wa<CR>:GoRun<CR>
-autocmd FileType go noremap <F1> :GoDef<CR>
-autocmd FileType go noremap <F12> :GoDefPop<CR>
+autocmd FileType go noremap <F1>   :GoDef<CR>
+nmap                        <F3>   :set nu! <CR>
+nmap                        <F4>   :set rnu! <CR>
+autocmd FileType go noremap <F5>   :wa<CR>:GoBuild<CR>:botright cwindow<CR>
+autocmd FileType go noremap <F7>   :wa<CR>:GoTest<CR>:botright cwindow<CR>
+autocmd FileType go noremap <F8>   :wa<CR>:GoRun main.go<CR>
+nmap                        <F9>   :wa<CR>:bo term <CR>
+autocmd FileType go noremap <F12>  :GoDefPop<CR>
+" Exit insert mode and remap
+autocmd FileType go imap    <F1>   <ESC><F1>
+imap                        <F2>   <ESC><F2>
+imap                        <F3>   <ESC><F3>
+imap                        <F4>   <ESC><F4>
+autocmd FileType go imap    <F5>   <ESC><F5>
+autocmd FileType go imap    <F6>   <ESC><F6>
+autocmd FileType go imap    <F7>   <ESC><F7>
+autocmd FileType go imap    <F8>   <ESC><F8>
+autocmd FileType go imap    <F9>   <ESC><F9>
+autocmd FileType go imap    <F10>  <ESC><F10>
+autocmd FileType go imap    <F11>  <ESC><F11>
+autocmd FileType go imap    <F12>  <ESC><F12>
+
+" Folding saving and loading
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+
+
