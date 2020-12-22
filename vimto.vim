@@ -85,6 +85,7 @@ autocmd FileType go noremap <F5>   :wa<CR>:GoBuild<CR>:botright cwindow<CR>
 autocmd FileType go noremap <F7>   :wa<CR>:GoTest<CR>:botright cwindow<CR>
 autocmd FileType go noremap <F8>   :wa<CR>:GoRun main.go<CR>
 nmap                        <F9>   :wa<CR>:bo term <CR>
+nmap                        <F10>  :bo cw<CR>
 autocmd FileType go noremap <F12>  :GoDefPop<CR>
 " Exit insert mode and remap
 autocmd FileType go imap    <F1>   <ESC><F1>
