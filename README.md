@@ -10,5 +10,8 @@ git clone https://github.com/da0x/vimto.git ~/.vimto
 ```
 Then add the following to your `.vimrc`
 ```
+vim ~/.vimrc
+```
+Insert the following line:
 source ~/.vimto/vimto.vim
 ```
