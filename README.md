@@ -17,5 +17,5 @@ Insert the following line:
 source ~/.vimto/vimto.vim
 ```
 
-Install Nord.terminal: https://github.com/arcticicestudio/nord-terminal-app
-Install Vim Plug: https://github.com/junegunn/vim-plug
+- Install Nord.terminal: https://github.com/arcticicestudio/nord-terminal-app
+- Install Vim Plug: https://github.com/junegunn/vim-plug
