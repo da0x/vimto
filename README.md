@@ -7,15 +7,8 @@ My approach is minimalist behavior and full visual beauty. Give it a shot.
 To install
 ```
 git clone https://github.com/da0x/vimto.git ~/.vimto
+echo source ~/.vimto/vimto.vim << ~/.vimrc
 ```
-Then add the following to your `.vimrc`
-```
-vim ~/.vimrc
-```
-Insert the following line:
-```
-source ~/.vimto/vimto.vim
-```
+Install Nord.terminal: https://github.com/arcticicestudio/nord-terminal-app
 
-- Install Nord.terminal: https://github.com/arcticicestudio/nord-terminal-app
-- Install Vim Plug: https://github.com/junegunn/vim-plug
+Install Vim Plug: https://github.com/junegunn/vim-plug
