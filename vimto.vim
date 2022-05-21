@@ -84,6 +84,9 @@ nmap                        <F4>   :set rnu! <CR>
 autocmd FileType go noremap <F5>   :wa<CR>:GoBuild<CR>:botright cwindow<CR>
 autocmd FileType go noremap <F7>   :wa<CR>:GoTest<CR>:botright cwindow<CR>
 autocmd FileType go noremap <F8>   :wa<CR>:GoRun main.go<CR>
+autocmd FileType cpp noremap <F5>  :wa<CR>:make .obj/%.o<CR>:botright cwindow<CR>
+autocmd FileType cpp noremap <F7>  :wa<CR>:make<CR>
+autocmd FileType cpp noremap <F8>  :wa<CR>:make run<CR>
 nmap                        <F9>   :wa<CR>:bo term <CR>
 nmap                        <F10>  :bo cw<CR>
 autocmd FileType go noremap <F12>  :GoDefPop<CR>
