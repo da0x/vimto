@@ -16,3 +16,5 @@ Run:
 ```
 :PlugInstall
 ```
+
+Install Nord: https://github.com/arcticicestudio/nord-terminal-app
