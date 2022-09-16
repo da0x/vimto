@@ -78,31 +78,36 @@ noremap <A-Right>       <C-W>>
 
 
 " Vim Go shortcuts
-autocmd FileType go noremap <F1>   :GoDef<CR>
-nmap                        <F3>   :set nu! <CR>
-nmap                        <F4>   :set rnu! <CR>
-autocmd FileType go noremap <F5>   :wa<CR>:GoBuild<CR>:botright cwindow<CR>
-autocmd FileType go noremap <F7>   :wa<CR>:GoTest<CR>:botright cwindow<CR>
-autocmd FileType go noremap <F8>   :wa<CR>:GoRun main.go<CR>
-autocmd FileType cpp noremap <F5>  :wa<CR>:make .obj/%.o<CR>:botright cwindow<CR>
-autocmd FileType cpp noremap <F7>  :wa<CR>:make<CR>
-autocmd FileType cpp noremap <F8>  :wa<CR>:make run<CR>
-nmap                        <F9>   :wa<CR>:bo term <CR>
-nmap                        <F10>  :bo cw<CR>
-autocmd FileType go noremap <F12>  :GoDefPop<CR>
+autocmd FileType go noremap   <F1>   :GoDef<CR>
+nmap                          <F3>   :set nu! <CR>
+nmap                          <F4>   :set rnu! <CR>
+autocmd FileType go noremap   <F5>   :wa<CR>:GoBuild<CR>:botright cwindow<CR>
+autocmd FileType go noremap   <F7>   :wa<CR>:GoTest<CR>:botright cwindow<CR>
+autocmd FileType go noremap   <F8>   :wa<CR>:GoRun main.go<CR>
+autocmd FileType cpp noremap  <F5>  :wa<CR>:make .obj/%.o<CR>:botright cwindow<CR>
+autocmd FileType cpp noremap  <F7>  :wa<CR>:make<CR>
+autocmd FileType cpp noremap  <F8>  :wa<CR>:make run<CR>
+nmap                          <F9>   :wa<CR>:bo term <CR>
+nmap                          <F10>  :bo cw<CR>
+autocmd FileType go noremap   <F12>  :GoDefPop<CR>
 " Exit insert mode and remap
-autocmd FileType go imap    <F1>   <ESC><F1>
-imap                        <F2>   <ESC><F2>
-imap                        <F3>   <ESC><F3>
-imap                        <F4>   <ESC><F4>
-autocmd FileType go imap    <F5>   <ESC><F5>
-autocmd FileType go imap    <F6>   <ESC><F6>
-autocmd FileType go imap    <F7>   <ESC><F7>
-autocmd FileType go imap    <F8>   <ESC><F8>
-autocmd FileType go imap    <F9>   <ESC><F9>
-autocmd FileType go imap    <F10>  <ESC><F10>
-autocmd FileType go imap    <F11>  <ESC><F11>
-autocmd FileType go imap    <F12>  <ESC><F12>
+autocmd FileType go imap      <F1>   <ESC><F1>
+imap                          <F2>   <ESC><F2>
+imap                          <F3>   <ESC><F3>
+imap                          <F4>   <ESC><F4>
+autocmd FileType go imap      <F5>   <ESC><F5>
+autocmd FileType go imap      <F6>   <ESC><F6>
+autocmd FileType go imap      <F7>   <ESC><F7>
+autocmd FileType go imap      <F8>   <ESC><F8>
+autocmd FileType go imap      <F9>   <ESC><F9>
+autocmd FileType go imap      <F10>  <ESC><F10>
+autocmd FileType go imap      <F11>  <ESC><F11>
+autocmd FileType go imap      <F12>  <ESC><F12>
+
+autocmd FileType html noremap <F5> :wa<CR>
+autocmd FileType html imap    <F5> <ESC><F5>
+autocmd FileType css noremap  <F5> :wa<CR>
+autocmd FileType css imap     <F5> <ESC><F5>
 
 " Folding saving and loading
 autocmd BufWinLeave *.* mkview
