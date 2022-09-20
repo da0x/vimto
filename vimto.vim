@@ -7,6 +7,7 @@ call plug#begin()
   Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'yuezk/vim-js'
   Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
