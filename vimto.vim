@@ -111,6 +111,12 @@ autocmd FileType html noremap <F5> :wa<CR>
 autocmd FileType html imap    <F5> <ESC><F5>
 autocmd FileType css noremap  <F5> :wa<CR>
 autocmd FileType css imap     <F5> <ESC><F5>
+autocmd FileType tsx noremap  <F5> :wa<CR>
+autocmd FileType tsx noremap  <F5> <ESC><F5>
+
+" Save All + Quit
+noremap <F12> :wa<CR>:q<CR>                                                                                              
+imap    <F12> <ESC><F12>
 
 " Folding saving and loading
 autocmd BufWinLeave *.* mkview
