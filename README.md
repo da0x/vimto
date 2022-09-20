@@ -18,3 +18,4 @@ Run:
 ```
 
 Install Nord: https://github.com/arcticicestudio/nord-terminal-app
+Install PaperColor: https://github.com/tomotargz/papercolor-terminal-app
