@@ -7,13 +7,13 @@ call plug#begin()
   Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'yuezk/vim-js'
-  Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 
 " Loading color schemes.
 syntax on
+" Use new regular expression engine
+set re=0
 set t_Co=256
 set cursorline
 set background=dark
@@ -106,15 +106,18 @@ autocmd FileType go imap      <F10>  <ESC><F10>
 autocmd FileType go imap      <F11>  <ESC><F11>
 autocmd FileType go imap      <F12>  <ESC><F12>
 
-autocmd FileType html noremap <F5> :wa<CR>
+autocmd FileType html noremap <F5> :w<CR>
+autocmd FileType css noremap  <F5> :w<CR>
+autocmd FileType tsx noremap  <F5> :w<CR>
+autocmd FileType md noremap   <F5> :w<CR>
+
 autocmd FileType html imap    <F5> <ESC><F5>
-autocmd FileType css noremap  <F5> :wa<CR>
 autocmd FileType css imap     <F5> <ESC><F5>
-autocmd FileType tsx noremap  <F5> :wa<CR>
-autocmd FileType tsx noremap  <F5> <ESC><F5>
+autocmd FileType tsx imap     <F5> <ESC><F5>
+autocmd FileType md imap      <F5> <ESC><F5>
 
 " Save All + Quit
-noremap <F12> :wa<CR>:q<CR>                                                                                              
+noremap <F12> :w<CR>:q<CR>                                                                                              
 imap    <F12> <ESC><F12>
 
 " Folding saving and loading
