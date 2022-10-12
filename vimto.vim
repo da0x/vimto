@@ -143,9 +143,10 @@ autocmd FileType css nmap     <F5>  :w<CR>
 autocmd FileType md nmap      <F5>  :w<CR>
 
 " typescript react
-autocmd FileType typescriptreact nmap     <F1>  :call CocAction('doHover')<CR>
-autocmd FileType typescriptreact nmap     <F5>  :w<CR>:make<CR>:botright cwindow<CR>
-autocmd FileType typescriptreact nmap     <F2>  <Plug>(coc-rename)
+"autocmd FileType typescriptreact nmap     <F1>  :call CocAction('doHover')<CR>
+autocmd FileType typescriptreact nmap     <F1>  :TsuquyomiDefinition<CR>
+autocmd FileType typescriptreact nmap     <F2>  :TsuRenameSymbol<CR>
+autocmd FileType typescriptreact nmap     <F5>  :w<CR>:make --noEmit --jsx react<CR>:botright cwindow<CR>
 
 " typescript
 autocmd FileType typescript nmap          <F1>  :TsuquyomiDefinition<CR>
