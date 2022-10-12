@@ -7,7 +7,37 @@ call plug#begin()
   Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'HerringtonDarkholme/yats.vim'
+" Typescript
+  Plug 'Quramy/tsuquyomi'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
 
 " Loading color schemes.
@@ -60,7 +90,6 @@ noremap <C-j> <C-W>j
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
-
 " Arrwos
 noremap <Up>            <C-W>k
 noremap <Down>          <C-W>j
@@ -78,51 +107,59 @@ noremap <A-Down>        <C-W>-
 noremap <A-Left>        <C-W><
 noremap <A-Right>       <C-W>>
 
-
-" Vim Go shortcuts
+" Go shortcuts
 autocmd FileType go noremap   <F1>   :GoDef<CR>
 nmap                          <F3>   :set nu! <CR>
 nmap                          <F4>   :set rnu! <CR>
 autocmd FileType go noremap   <F5>   :wa<CR>:GoBuild<CR>:botright cwindow<CR>
 autocmd FileType go noremap   <F7>   :wa<CR>:GoTest<CR>:botright cwindow<CR>
 autocmd FileType go noremap   <F8>   :wa<CR>:GoRun main.go<CR>
-autocmd FileType cpp noremap  <F5>  :wa<CR>:make .obj/%.o<CR>:botright cwindow<CR>
-autocmd FileType cpp noremap  <F7>  :wa<CR>:make<CR>
-autocmd FileType cpp noremap  <F8>  :wa<CR>:make run<CR>
+autocmd FileType go noremap   <F11>  :GoDefPop<CR>
+
+" C++ shortcuts
+autocmd FileType cpp noremap  <F5>   :wa<CR>:make .obj/%.o<CR>:botright cwindow<CR>
+autocmd FileType cpp noremap  <F7>   :wa<CR>:make<CR>
+autocmd FileType cpp noremap  <F8>   :wa<CR>:make run<CR>
 nmap                          <F9>   :wa<CR>:bo term <CR>
 nmap                          <F10>  :bo cw<CR>
-autocmd FileType go noremap   <F12>  :GoDefPop<CR>
-" Exit insert mode and remap
-autocmd FileType go imap      <F1>   <ESC><F1>
+
+" Exit insert mode and remap for all function keys.
+imap                          <F1>   <ESC><F1>
 imap                          <F2>   <ESC><F2>
 imap                          <F3>   <ESC><F3>
 imap                          <F4>   <ESC><F4>
-autocmd FileType go imap      <F5>   <ESC><F5>
-autocmd FileType go imap      <F6>   <ESC><F6>
-autocmd FileType go imap      <F7>   <ESC><F7>
-autocmd FileType go imap      <F8>   <ESC><F8>
-autocmd FileType go imap      <F9>   <ESC><F9>
-autocmd FileType go imap      <F10>  <ESC><F10>
-autocmd FileType go imap      <F11>  <ESC><F11>
-autocmd FileType go imap      <F12>  <ESC><F12>
+imap                          <F5>   <ESC><F5>
+imap                          <F6>   <ESC><F6>
+imap                          <F7>   <ESC><F7>
+imap                          <F8>   <ESC><F8>
+imap                          <F9>   <ESC><F9>
+imap                          <F10>  <ESC><F10>
+imap                          <F11>  <ESC><F11>
+imap                          <F12>  <ESC><F12>
 
-autocmd FileType html noremap <F5> :w<CR>
-autocmd FileType css noremap  <F5> :w<CR>
-autocmd FileType tsx noremap  <F5> :w<CR>
-autocmd FileType md noremap   <F5> :w<CR>
+" HTML
+autocmd FileType html nmap    <F5>  :w<CR>
+autocmd FileType css nmap     <F5>  :w<CR>
+autocmd FileType md nmap      <F5>  :w<CR>
 
-autocmd FileType html imap    <F5> <ESC><F5>
-autocmd FileType css imap     <F5> <ESC><F5>
-autocmd FileType tsx imap     <F5> <ESC><F5>
-autocmd FileType md imap      <F5> <ESC><F5>
+" typescript react
+autocmd FileType typescriptreact nmap     <F1>  :call CocAction('doHover')<CR>
+autocmd FileType typescriptreact nmap     <F5>  :w<CR>:make<CR>:botright cwindow<CR>
+autocmd FileType typescriptreact nmap     <F2>  <Plug>(coc-rename)
 
-" Save All + Quit
-noremap <F12> :w<CR>:q<CR>                                                                                              
-imap    <F12> <ESC><F12>
+" typescript
+autocmd FileType typescript nmap          <F1>  :TsuquyomiDefinition<CR>
+autocmd FileType typescript nmap          <F2>  :TsuRenameSymbol<CR>
+autocmd FileType typescript nmap          <F5>  :w<CR>:make --noEmit<CR>:botright cwindow<CR>
+autocmd FileType typescript nmap          <F11> :TsuGoBack<CR>
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+
+" Save + Quit
+noremap                       <F12> :w<CR>:q<CR>
 
 " Folding saving and loading
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
-
 
 
