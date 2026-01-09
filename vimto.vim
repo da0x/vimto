@@ -156,8 +156,17 @@ autocmd FileType typescript nmap          <F11> :TsuGoBack<CR>
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 
-" Save + Quit
-noremap                       <F12> :w<CR>:q<CR>
+" Save + Quit (handle netrw and other non-file buffers)
+nnoremap <F12> :call SmartQuit()<CR>
+
+function! SmartQuit()
+  if &buftype !=# '' || &modifiable == 0
+    quit
+  else
+    write | quit
+  endif
+endfunction
+
 
 " Folding saving and loading
 autocmd BufWinLeave *.* mkview
