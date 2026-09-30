@@ -1,5 +1,9 @@
 " languages.vim — Filetype-specific autocmds
 
+" Load each filetype's ftplugin (comment string, indent width), including those
+" from packages such as uione. Indent scripts stay off: indentation is left as is.
+filetype plugin on
+
 " Go
 autocmd FileType go setlocal makeprg=go\ build\ ./...
 autocmd FileType go noremap <buffer> <F1>  :LspGotoDefinition<CR>
