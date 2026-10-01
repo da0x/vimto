@@ -26,6 +26,9 @@ echo "source ~/vimto/vimto.vim" >> ~/.vimrc
 │   ├── lsp.vim            # yegappan/lsp setup + LSP keybindings
 │   ├── languages.vim      # Filetype-specific autocmds (Go, TS, C++)
 │   └── functions.vim      # SmartQuit, fold persistence
+├── ftdetect/ebnf.vim      # *.ebnf files are EBNF grammars
+├── syntax/ebnf.vim        # Highlighting for EBNF (W3C ::= style, and ISO = ... ;)
+├── ftplugin/ebnf.vim      # /* */ comments for the comment package
 ├── pack/plugins/
 │   ├── start/nord-vim/    # Color scheme (auto-loaded)
 │   └── opt/lsp/           # yegappan/lsp (loaded via packadd)
