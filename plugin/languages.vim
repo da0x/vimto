@@ -33,4 +33,4 @@ autocmd FileType cpp noremap <buffer> <F8>  :wa<CR>:make run<CR>
 " HTML / CSS / Markdown
 autocmd FileType html nmap <buffer> <F5> :w<CR>
 autocmd FileType css  nmap <buffer> <F5> :w<CR>
-autocmd FileType md   nmap <buffer> <F5> :w<CR>
+autocmd FileType markdown nmap <buffer> <F5> :w<CR>
