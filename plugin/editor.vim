@@ -15,6 +15,15 @@ set expandtab
 " Scroll offset
 set scrolloff=10
 
+" A ~/.vimrc stops Vim loading defaults.vim, so the parts of it worth having are here.
+" Search as you type, and let Esc leave insert mode at once instead of after a second.
+set incsearch
+set ttimeout
+set ttimeoutlen=100
+set display=truncate
+set history=200
+set nrformats-=octal
+
 " Modern command-line completion popup
 set wildoptions=pum
 
