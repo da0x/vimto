@@ -33,24 +33,20 @@ vim -u NONE -c "helptags $VIMTO_DIR/pack/plugins/opt/lsp/doc" -c q
 echo ""
 echo "=== Language servers ==="
 
-if command -v go &> /dev/null; then
-    echo "Installing gopls..."
-    go install golang.org/x/tools/gopls@latest
-else
-    echo "Go not found — skipping gopls install."
-fi
+missing=()
+for server in gopls typescript-language-server clangd; do
+    if command -v "$server" &> /dev/null; then
+        echo "$server found: $(command -v "$server")"
+    else
+        case "$server" in
+            clangd) missing+=(clang) ;;
+            *) missing+=("$server") ;;
+        esac
+    fi
+done
 
-if command -v npm &> /dev/null; then
-    echo "Installing typescript-language-server..."
-    npm install -g typescript typescript-language-server
-else
-    echo "npm not found — skipping typescript-language-server install."
-fi
-
-if command -v clangd &> /dev/null; then
-    echo "clangd found: $(which clangd)"
-else
-    echo "clangd not found. Install it: sudo pacman -S clang"
+if [ ${#missing[@]} -gt 0 ]; then
+    echo "Missing language servers. Install them: sudo pacman -S ${missing[*]}"
 fi
 
 echo ""

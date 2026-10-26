@@ -7,9 +7,8 @@ My approach is minimalist behavior and full visual beauty. Give it a shot.
 ## Prerequisites
 
 - Vim 9.1+
-- Go toolchain (for gopls)
-- Node.js / npm (for typescript-language-server)
-- clangd (for C/C++ LSP — `sudo pacman -S clang`)
+- Language servers, for the languages you edit:
+  `sudo pacman -S gopls typescript-language-server clang` (clangd comes in `clang`)
 
 ## Install
 
@@ -19,7 +18,7 @@ bash ~/vimto/setup.sh
 echo "source ~/vimto/vimto.vim" >> ~/.vimrc
 ```
 
-`setup.sh` clones plugins and installs language servers.
+`setup.sh` clones plugins and reports any missing language servers.
 
 ## Terminal Color Schemes
 
