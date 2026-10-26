@@ -2,10 +2,7 @@
 
 syntax on
 
-" Use new regular expression engine
-set re=0
 set cursorline
-set background=dark
 
 colorscheme nord
 

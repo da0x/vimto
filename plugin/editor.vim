@@ -22,7 +22,6 @@ set hlsearch
 set ttimeout
 set ttimeoutlen=100
 set display=truncate
-set history=200
 set nrformats-=octal
 
 " Modern command-line completion popup
