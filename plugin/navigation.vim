@@ -4,11 +4,9 @@
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
-" Window navigation: Ctrl+arrows and Ctrl+hjkl
+" Window navigation: Ctrl+Up/Down and Ctrl+hjkl
 noremap <C-Up> <C-W>k
 noremap <C-Down> <C-W>j
-noremap <C-Left> <C-W>h
-noremap <C-Right> <C-W>l
 
 noremap <C-k> <C-W>k
 noremap <C-j> <C-W>j
