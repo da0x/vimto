@@ -14,5 +14,8 @@ endfunction
 " Folding saving and loading. Views keep folds and the cursor, not local options:
 " a saved option outlives every later change to the filetype's settings.
 set viewoptions-=options
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+augroup vimto_views
+    autocmd!
+    autocmd BufWinLeave *.* mkview
+    autocmd BufWinEnter *.* silent loadview
+augroup END

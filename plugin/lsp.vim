@@ -43,7 +43,10 @@ function! s:LspSetup()
 endfunction
 
 if exists('*LspAddServer')
-    autocmd VimEnter * call s:LspSetup()
+    augroup vimto_lsp
+        autocmd!
+        autocmd VimEnter * call s:LspSetup()
+    augroup END
 endif
 
 " LSP keybindings (unified, replacing CoC/tsuquyomi/vim-go)
